@@ -22,7 +22,7 @@ O **Organizaê** é uma aplicação web interativa desenvolvida como Trabalho Pr
 - **Git & GitHub:** Versionamento de código e deploy via GitHub Pages.
 
 ## ⚙️ Instruções para Executar
-1. Clone este repositório: `git clone https://github.com/<SEU_USUARIO>/organizae.git`
+1. Clone este repositório: `https://evangelistacaio.github.io/organizae`
 2. Navegue até a pasta do projeto.
 3. Abra o arquivo `index.html` em qualquer navegador web moderno.
 *(Não é necessária instalação de dependências ou servidores locais).*
