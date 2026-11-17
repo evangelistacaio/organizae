@@ -3,7 +3,7 @@
 O **Organizaê** é uma aplicação web interativa desenvolvida como Trabalho Prático Individual para a disciplina de Desenvolvimento Web (2026). A aplicação permite aos usuários gerenciar suas tarefas diárias de forma simples e eficiente, rodando inteiramente no navegador.
 
 ## 🔗 Link do Projeto (GitHub Pages)
-<a href="https://evangelistacaio.github.io/organizae" target="_blank">Acesse a Aplicação Aqui</a>
+[Acesse a Aplicação Aqui](https://evangelistacaio.github.io/organizae)
 
 ## 🚀 Funcionalidades Implementadas
 - **Cadastrar:** Adição de novas tarefas.
