@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizaê - Gerenciador de Tarefas</title>
+    <!-- Link para o CSS puro, sem Bootstrap -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Organizaê</h1>
+            <p>Gerencie suas tarefas de forma simples e eficiente</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Seção de Cadastro de Tarefas -->
+        <section class="add-task-section">
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="Qual a tarefa de hoje?" required>
+                
+                <!-- NOVO: Campo de Prioridade -->
+                <select id="task-priority" required>
+                    <option value="" disabled selected>Prioridade?</option>
+                    <option value="Urgente">Urgente</option>
+                    <option value="Média">Média</option>
+                    <option value="Leve">Leve</option>
+                </select>
+
+                <button type="submit" id="btn-add">Adicionar</button>
+            </form>
+        </section>
+
+        <!-- Seção de Filtros e Contadores -->
+        <section class="dashboard-section">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pending">Pendentes</button>
+                <button class="filter-btn" data-filter="completed">Concluídas</button>
+            </div>
+            <div class="counters">
+                <span>Total: <strong id="count-total">0</strong></span>
+                <span>Pendentes: <strong id="count-pending">0</strong></span>
+                <span>Concluídas: <strong id="count-completed">0</strong></span>
+            </div>
+        </section>
+
+        <!-- Seção da Lista de Tarefas -->
+        <section class="task-list-section">
+            <ul id="task-list">
+                <!-- As tarefas serão injetadas aqui via JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Organizaê | Desenvolvido por Caio Araújo</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>

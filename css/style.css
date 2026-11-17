@@ -1,0 +1,259 @@
+/* Variáveis para facilitar a mudança de cores do tema */
+:root {
+    --primary-color: #4F46E5;
+    --primary-hover: #4338CA;
+    --bg-color: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --danger: #EF4444;
+    --success: #10B981;
+    --border-color: #E5E7EB;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+/* Formulário de Adição */
+.add-task-section {
+    margin: 30px 0;
+}
+
+#task-form {
+    display: flex;
+    gap: 10px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-input:focus {
+    border-color: var(--primary-color);
+}
+
+#btn-add {
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#btn-add:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Dashboard: Filtros e Contadores */
+.dashboard-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.counters {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Lista de Tarefas */
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.task-content span {
+    font-size: 1.1rem;
+    word-break: break-word;
+}
+
+/* Estilo para tarefa concluída */
+.task-item.completed .task-content span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-edit { color: var(--primary-color); }
+.btn-delete { color: var(--danger); }
+.btn-toggle { color: var(--success); }
+
+.btn-icon:hover {
+    background-color: var(--bg-color);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 600px) {
+    .dashboard-section {
+        flex-direction: column;
+    }
+    #task-form {
+        flex-direction: column;
+    }
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .task-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+}
+
+/* --- Estilos da Nova Prioridade --- */
+#task-priority {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+#task-priority:focus {
+    border-color: var(--primary-color);
+}
+
+/* Etiquetas coloridas (Badges) na lista */
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Cores por nível de prioridade */
+.badge.urgente { background-color: #FEE2E2; color: #991B1B; } /* Vermelho */
+.badge.media { background-color: #FEF3C7; color: #92400E; }   /* Amarelo/Laranja */
+.badge.leve { background-color: #D1FAE5; color: #065F46; }    /* Verde */
+
+/* Ajuste no layout mobile para o novo campo */
+@media (max-width: 600px) {
+    #task-priority {
+        width: 100%;
+    }
+}
